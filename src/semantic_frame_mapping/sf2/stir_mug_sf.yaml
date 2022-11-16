@@ -1,0 +1,12 @@
+# semantic frame
+# stir_sf.yaml
+
+name: stir_mug
+description: stir contents of mug with a spoon
+frame_elements:
+  - name: spoon
+    is_core: True
+  - name: mug
+    is_core: True
+preconditions:
+  - name: grasp_spoon

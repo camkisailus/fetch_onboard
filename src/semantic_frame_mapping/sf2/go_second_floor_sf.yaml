@@ -1,0 +1,10 @@
+# semantic frame
+# go_second_floor_sf.yaml 
+
+name: go_second_floor
+description: go to the second floor
+frame_elements:
+  - name: elevator
+    is_core: True
+preconditions:
+  - name: go_elevator

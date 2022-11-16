@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="fetch_actions" type="gazebo_pick.py" name="gazebo_pick_client_node" output="screen"/>
+    
+    <node name="basic_grasping_perception" pkg="simple_grasping" type="basic_grasping_perception" >
+        <rosparam command="load" file="$(find fetch_actions)/config/simple_grasping.yaml" />
+    </node>
+    <!-- <include file="$(find fetch_moveit_config)/launch/move_group.launch" >
+        <arg name="info" value="true"/>
+    </include> -->
+</launch>

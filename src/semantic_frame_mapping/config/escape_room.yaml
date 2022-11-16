@@ -1,0 +1,27 @@
+# Experiment Setup
+
+title: "escape_room"
+description: "Priors only. "
+regions:
+  - name: "r1"
+    min_x: -3
+    max_x: 2
+    min_y: -3.2
+    max_y: 1
+    min_z: 0
+    max_z: 1
+  - name: "r2"
+    min_x: 9.5
+    max_x: 11.5
+    min_y: 4
+    max_y: 8.5
+    min_z: 0
+    max_z: 1
+objects:
+  - name: "token"
+    priors:
+observations:
+frames:
+action_history:
+  - "idle"
+

@@ -1,0 +1,12 @@
+# semantic frame
+# grasp_mug_sf.yaml 
+
+name: grasp_mug
+description: grasp a mug
+frame_elements:
+  - name: mug
+    is_core: True
+  - name: mug_compound_modifier
+    is_core: False 
+  - name: mug_adjective_modifier
+    is_core: False

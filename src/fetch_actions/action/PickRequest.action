@@ -1,0 +1,8 @@
+# Goal
+int32 mode # 0 = pick, 1 = pick at given pose, 2 = pour, 3 = pour at given pose, 4 = pick @ pose pour @ pose
+geometry_msgs/Pose pick_pose
+geometry_msgs/Pose pour_pose
+---
+# Result
+---
+# Feedback

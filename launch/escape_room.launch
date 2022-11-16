@@ -1,0 +1,22 @@
+<launch>
+    <arg name="map_file" default="/home/fetch/kisailus_ws/maps/escape_room.yaml"/>
+
+     <!-- Navigation -->
+    <include file="$(find fetch_navigation)/launch/fetch_nav.launch">
+      <arg name="map_file" value="$(arg map_file)"/>
+      <!-- <arg name="map_keepout_file" value="$(arg keepout_file)" /> -->
+      <arg name="use_keepout" value="false" />
+    </include>   
+    <!-- Start MoveIt-->
+    <!-- <include file="$(find fetch_moveit_config)/launch/move_group.launch">
+      <arg name="info" value="true"/>
+    </include> -->
+    <!-- Perception -->
+    <!-- <node name="basic_grasping_perception" pkg="simple_grasping" type="basic_grasping_perception" >
+      <rosparam command="load" file="/home/fetch/kisailus_ws/src/config/simple_grasping.yaml" />
+    </node> -->
+    <!-- April Tags -->
+    <include file="$(find apriltag_ros)/launch/continuous_detection.launch"/>
+
+
+</launch>

@@ -1,0 +1,8 @@
+# semantic frame
+# call_elevator_sf.yaml 
+
+name: call_elevator
+description: call the elevator 
+frame_elements:
+  - name: elevator_button
+    is_core: True

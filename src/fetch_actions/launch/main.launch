@@ -1,0 +1,7 @@
+<launch>
+    <!-- <include file="$(find fetch_actions)/launch/move_base.launch"/>  -->
+    <!-- <include file="$(find fetch_actions)/launch/point_head.launch"/>  -->
+    <!-- <include file="$(find fetch_actions)/launch/pick.launch"/> -->
+    <!--<include file="$(find fetch_actions)/launch/torso_controller.launch"/> -->
+    <include file="$(find fetch_actions)/launch/gazebo_pick.launch"/>
+</launch>

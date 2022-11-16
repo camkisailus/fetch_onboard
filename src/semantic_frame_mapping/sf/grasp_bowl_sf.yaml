@@ -1,0 +1,12 @@
+# semantic frame
+# grasp_bowl_sf.yaml 
+
+name: grasp_bowl
+description: grasp a bowl
+frame_elements:
+  - name: bowl
+    is_core: True
+  - name: object_compound_modifier
+    is_core: False 
+  - name: object_adjective_modifier
+    is_core: False

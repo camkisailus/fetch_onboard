@@ -1,0 +1,12 @@
+# semantic frame
+# pour_mug_sf.yaml
+
+name: pour_mug
+frame_elements:
+  - name: mug
+    is_core: True
+  - name: mug
+    is_core: True
+preconditions:
+  - name: grasp_mug
+description: Pour contents of one mug into another mug

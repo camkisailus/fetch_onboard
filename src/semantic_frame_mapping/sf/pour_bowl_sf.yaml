@@ -1,0 +1,12 @@
+# semantic frame
+# pour_bowl_sf.yaml
+
+name: pour_bowl
+description: pour contents of bottle into bowl
+frame_elements:
+  - name: cup
+    is_core: True
+  - name: bowl
+    is_core: True
+preconditions:
+  - name: grasp_cup

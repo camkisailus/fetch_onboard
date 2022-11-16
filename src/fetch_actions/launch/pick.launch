@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="fetch_actions" type="pick.py" name="pick_client_node" output="screen"/>
+    <!-- Perception -->
+    <node name="basic_grasping_perception" pkg="simple_grasping" type="basic_grasping_perception" >
+      <rosparam command="load" file="/home/fetch/kisailus_ws/src/config/simple_grasping.yaml" />
+    </node>
+</launch>

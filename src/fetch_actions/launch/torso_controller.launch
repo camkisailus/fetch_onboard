@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="fetch_actions" type="torso_controller.py" name="torso_contoller_client_node" output="screen"/>
+</launch>

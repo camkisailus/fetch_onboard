@@ -1,0 +1,17 @@
+# semantic frame
+# drinkserve_sf.yaml
+
+name: drinkserve
+description: Pour contains of one container into another and then stir it
+frame_elements:
+  - name: mug
+    # Pouring mug
+    is_core: True
+  - name: mug
+    # Receiving mug
+    is_core: True
+  - name: spoon
+    is_core: True
+preconditions:
+  - name: pour_mug
+  - name: stir_mug

@@ -1,0 +1,58 @@
+<launch>
+    <arg name="map_file" default="$(find aws_robomaker_small_house_world)/maps/small_house_no_trash.yaml"/>
+    <arg name="record_bag" default="false"/>
+    <arg name="experiment_title" default=""/>
+    <arg name="robot" default="fetch"/>
+    <arg name="gui" default="false"/>
+    <arg name="gazebo" default="false"/>
+    <arg name="experiment_config" default="$(find semantic_frame_mapping)/config/$(arg experiment_title).yaml"/>
+
+    <!-- Gazebo -->
+    <include if="$(arg gazebo)" file="$(find aws_robomaker_small_house_world)/launch/small_house.launch">
+        <arg name="gui" value="$(arg gui)"/>
+    </include>
+
+    <!-- Fetch robot model in Gazebo -->
+    <include if="$(arg gazebo)" file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml" />
+    <!-- Fetch navigation stack and map server-->
+    <include if="$(arg gazebo)" file="$(find fetch_navigation)/launch/fetch_nav.launch">
+        <arg name="map_file" value="$(arg map_file)"/>
+        <arg name="map_keepout_file" value="$(find aws_robomaker_small_house_world)/maps/small_house_no_trash_keepout_zones.yaml"/>
+        <arg name="use_keepout" value="true"/>
+    </include>
+
+    <!-- Fetch Action server -->
+    <include if="$(arg gazebo)" file="$(find fetch_actions)/launch/main.launch"/>
+    
+    <node unless="$(arg gazebo)" name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="log"/>
+    <!-- SFM Driver-->
+    <include file="$(find semantic_frame_mapping)/launch/semantic_frame_mapping.launch">
+        <arg name="experiment_config" value="$(arg experiment_config)"/>
+        <arg name="record" value="$(arg record_bag)"/>
+    </include>
+
+    <!-- Record a bag -->
+    <node if="$(arg record_bag)" 
+        pkg="rosbag" 
+        type="record" 
+        name="rosbag_record_node" 
+        args="record -o /home/cuhsailus/Desktop/Research/Spring_22/fetch_sfm_ws/$(arg experiment_title)
+            /tf
+            /map
+            /filter/gauss/grasp_cup
+            /filter/gauss/grasp_spoon
+            /filter/gauss/stir_cup
+            /filter/particles/cup
+            /filter/particles/grasp_cup
+            /filter/particles/grasp_spoon
+            /filter/particles/spoon
+            /filter/particles/stir_cup
+            /filter/static_object/cup
+            /filter/static_object/spoon
+            "
+        output="log"
+    />
+
+
+
+</launch>
