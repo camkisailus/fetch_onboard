@@ -1,5 +1,0 @@
-<launch>
-    <include file="$(find fetch_actions)/launch/main.launch"/>
-    <include file="$(find grasploc_wrapper)/launch/grasploc_node.launch"/>
-    <include file="$(find semantic_frame_mapping)/launch/semantic_frame_mapping.launch"/>
-</launch>

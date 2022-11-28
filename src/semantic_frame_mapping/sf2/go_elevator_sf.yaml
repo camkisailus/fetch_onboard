@@ -1,8 +1,0 @@
-# semantic frame
-# go_elevator_sf.yaml 
-
-name: go_elevator
-description: go to the elevator 
-frame_elements:
-  - name: elevator
-    is_core: True

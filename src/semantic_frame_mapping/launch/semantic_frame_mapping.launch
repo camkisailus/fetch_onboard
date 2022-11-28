@@ -1,9 +1,0 @@
-<launch>
-    <arg name="experiment_config" default=""/>
-    <arg name="record" default="false"/>
-    <node pkg="semantic_frame_mapping" type="SFM.py" name="SFM_client_node" output="screen">
-        <param name="sf_dir" value="$(find semantic_frame_mapping)/sf/"/>
-        <param name="experiment_config" value="$(arg experiment_config)"/>
-        <param name="record" value="$(arg record)"/>
-    </node>
-</launch>
